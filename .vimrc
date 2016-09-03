@@ -23,7 +23,7 @@ filetype plugin indent on    " required
 " Key mappings
 " Open NERDTree with Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
-" Navigate between split windows with Ctrl-<directionkey>
+" Split Navigations 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -35,3 +35,10 @@ set splitright
 nnoremap <C-M> :exec '!' .getline('.')<CR>
 " Line numbers
 set number
+" Visual autocomplete menu
+set wildmenu
+" Show matching parentheses
+set showmatch
+" load filetype-specific indent files
+filetype indent on
+
