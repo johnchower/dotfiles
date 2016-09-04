@@ -11,6 +11,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'jalvesaq/Nvim-R'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'scrooloose/nerdtree.git'
@@ -41,4 +42,11 @@ set wildmenu
 set showmatch
 " load filetype-specific indent files
 filetype indent on
-
+" syntax highlighting
+syntax on
+" R tmux pane options
+let R_in_buffer = 0
+let R_applescript = 0
+let R_tmux_split = 1
+" Disable Nvim-R's autocompletion of "_" to "<-"
+let vimrplugin_assign = 0
