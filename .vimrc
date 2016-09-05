@@ -48,5 +48,7 @@ syntax on
 let R_in_buffer = 0
 let R_applescript = 0
 let R_tmux_split = 1
+" R indentation rules
+let r_indent_op_pattern = '%[^%]*%$'
 " Disable Nvim-R's autocompletion of "_" to "<-"
-let vimrplugin_assign = 0
+let vimrplugin_assign = 1
