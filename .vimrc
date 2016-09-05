@@ -17,6 +17,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'jpalardy/vim-slime'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -26,12 +27,6 @@ filetype plugin indent on    " required
 
 " Open NERDTree with Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
-
-" Split Navigations 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " Automatic split location
 set splitbelow
@@ -69,3 +64,18 @@ let vimrplugin_assign = 1
 " Setup vim-slime to work with tmux
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
+
+" Split Navigations 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+ 
+" TMUX window move stuff
+" let g:tmux_navigator_no_mappings = 1
+ 
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-\\> :TmuxNavigatePrevious<cr>
