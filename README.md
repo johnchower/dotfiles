@@ -1,6 +1,6 @@
 # dotfiles
 
-All file locations are \\~ unless otherwise specified.
+All file locations are \~ unless otherwise specified.
 
 ## R.vim
 Vim configuration script for R.
