@@ -59,7 +59,7 @@ let R_tmux_split = 1
 let r_indent_op_pattern = '%[^%]*%$'
 
 " Disable Nvim-R's autocompletion of "_" to "<-"
-let vimrplugin_assign = 1
+let R_assign = 2
 
 " Setup vim-slime to work with tmux
 let g:slime_target = "tmux"
