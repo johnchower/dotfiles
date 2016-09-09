@@ -49,6 +49,7 @@ filetype indent on
 
 " syntax highlighting
 syntax on
+colo pablo 
 
 " R tmux pane options
 let R_in_buffer = 0
@@ -60,6 +61,9 @@ let r_indent_op_pattern = '%[^%]*%$'
 
 " Disable Nvim-R's autocompletion of "_" to "<-"
 let R_assign = 2
+
+" Change Nvim-R sourcing behavior
+let R_source_args = "print.eval = TRUE, echo = TRUE"
 
 " Setup vim-slime to work with tmux
 let g:slime_target = "tmux"
