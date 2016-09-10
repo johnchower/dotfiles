@@ -47,7 +47,8 @@ set showmatch
 " load filetype-specific indent files
 filetype indent on
 
-" syntax highlighting
+" syntax highlighting and colors
+set t_Co=256
 syntax on
 colo pablo 
 
