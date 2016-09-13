@@ -24,3 +24,4 @@ export TERM="xterm-256color"
 alias gitd='git diff'
 alias gits='git status'
 alias gitc='git commit -m'
+alias gita='git add'
