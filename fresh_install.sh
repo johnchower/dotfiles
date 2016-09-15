@@ -83,3 +83,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Do stuff that'll allow for the smart vim-tmux pane switching
 curl -fsSL https://gist.github.com/mislav/5189704/raw/install.sh | bash -e
+
+# Install NeoVim
+sudo add-apt-repository ppa:neovim-ppa/unstable
+
+sudo apt-get update
+
+sudo apt-get install neovim
