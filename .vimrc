@@ -62,6 +62,8 @@ let r_indent_op_pattern = '%[^%]*%$'
 " Disable Nvim-R's autocompletion of "_" to "<-"
 let R_assign = 2
 
+" Show Nvim-R's omni completion as you type
+let R_show_args = 1
 " Change Nvim-R sourcing behavior
 let R_source_args = "print.eval = TRUE, echo = TRUE"
 
