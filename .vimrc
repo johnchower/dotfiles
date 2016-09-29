@@ -14,13 +14,13 @@ Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'jpalardy/vim-slime'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
