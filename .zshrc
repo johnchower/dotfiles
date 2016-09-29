@@ -19,3 +19,9 @@ ZSH_THEME="3den"
 # Sample zshrc configs
 
 export TERM="xterm-256color"
+
+# Git aliases
+alias gitd='git diff'
+alias gits='git status'
+alias gitc='git commit -m'
+alias gita='git add'

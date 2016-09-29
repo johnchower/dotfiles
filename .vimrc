@@ -18,6 +18,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'jpalardy/vim-slime'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,10 +50,10 @@ set showmatch
 " load filetype-specific indent files
 filetype indent on
 
-" syntax highlighting and colors
-set t_Co=256
-syntax on
-colo pablo 
+" syntax highlighting
+syntax enable
+set background=dark
+colo solarized 
 
 " R tmux pane options
 let R_in_buffer = 0
@@ -63,6 +66,8 @@ let r_indent_op_pattern = '%[^%]*%$'
 " Disable Nvim-R's autocompletion of "_" to "<-"
 let R_assign = 2
 
+" Show Nvim-R's omni completion as you type
+let R_show_args = 1
 " Change Nvim-R sourcing behavior
 let R_source_args = "print.eval = TRUE, echo = TRUE"
 
@@ -84,3 +89,13 @@ nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-\\> :TmuxNavigatePrevious<cr>
+
+" Syntastic recommended beginner settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
