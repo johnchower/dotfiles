@@ -20,6 +20,7 @@ Plugin 'jpalardy/vim-slime'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,8 +51,9 @@ set showmatch
 filetype indent on
 
 " syntax highlighting
-syntax on
-colo pablo 
+syntax enable
+set background=dark
+colo solarized 
 
 " R tmux pane options
 let R_in_buffer = 0
