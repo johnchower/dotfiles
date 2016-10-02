@@ -25,3 +25,6 @@ alias gitd='git diff'
 alias gits='git status'
 alias gitc='git commit -m'
 alias gita='git add'
+
+# Alias for neovim
+alias vim=nvim
