@@ -21,12 +21,31 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Valloric/YouCompleteMe'
+" Plugin 'vim-scripts/AutoComplPop'
+" Plugin 'Shougo/neocomplete.vim'
+Plugin 'vim-scripts/dbext.vim'
+Plugin 'vim-scripts/SQLComplete.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ivanov/vim-ipython'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'tpope/vim-unimpaired'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Key mappings
+
+" Search Settings
+" Highlight search results as you type
+set incsearch
+" Search defaults to case-insensitive
+set ignorecase
+" allows incsearch highlighting for range commands
+cnoremap $t <CR>:t''<CR>
+cnoremap $T <CR>:T''<CR>
+cnoremap $m <CR>:m''<CR>
+cnoremap $M <CR>:M''<CR>
+cnoremap $d <CR>:d<CR>``
 
 " Open NERDTree with Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
@@ -55,6 +74,12 @@ syntax enable
 set background=dark
 colo solarized 
 
+" YouCompleteMe semantic triggers
+  let g:ycm_semantic_triggers =  {
+    \   'r' : ['::[^\s^(]+', '(', '<-', '%>%'],
+    \   'R' : ['::[^\s^(]+', '(', '<-', '%>%'],
+    \	'sql' : ['FROM\s']
+    \ }
 " R tmux pane options
 let R_in_buffer = 0
 let R_applescript = 0
@@ -95,11 +120,21 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_enable_r_lintr_checker = 1
+let g:syntastic_r_checkers = ['lintr']
+let g:syntastic_r_lintr_linters = "with_defaults(camel_case_linter = NULL, object_length_linter = NULL)"
+
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+" Vim Markdown Preview options
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_temp_file=1
 
 " Search options
 set incsearch
 set ignorecase
+
