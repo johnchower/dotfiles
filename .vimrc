@@ -9,7 +9,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'scrooloose/nerdtree.git'
@@ -129,6 +129,12 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
 " Vim Markdown Preview options
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_temp_file=1
+
+" Search options
+set incsearch
+set ignorecase
+
