@@ -34,12 +34,12 @@ Plugin 'tpope/vim-unimpaired'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-
 " Search Settings
 " Highlight search results as you type
 set incsearch
 " Search defaults to case-insensitive
 set ignorecase
+
 " allows incsearch highlighting for range commands
 cnoremap $t <CR>:t''<CR>
 cnoremap $T <CR>:T''<CR>
@@ -75,9 +75,9 @@ set background=dark
 colo solarized 
 
 " YouCompleteMe semantic triggers
+"   \   'r' : ['::[^\s^(]+', '(', '<-', '%>%'],
+"   \   'R' : ['::[^\s^(]+', '(', '<-', '%>%'],
   let g:ycm_semantic_triggers =  {
-    \   'r' : ['::[^\s^(]+', '(', '<-', '%>%'],
-    \   'R' : ['::[^\s^(]+', '(', '<-', '%>%'],
     \	'sql' : ['FROM\s']
     \ }
 " R tmux pane options
@@ -133,8 +133,3 @@ let g:syntastic_check_on_wq = 0
 " Vim Markdown Preview options
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_temp_file=1
-
-" Search options
-set incsearch
-set ignorecase
-
