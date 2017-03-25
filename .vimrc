@@ -29,6 +29,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ivanov/vim-ipython'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -95,6 +96,9 @@ let R_assign = 2
 let R_show_args = 1
 " Change Nvim-R sourcing behavior
 let R_source_args = "print.eval = TRUE, echo = TRUE"
+
+" Automatically open html document after knitting
+let R_openhtml = 1
 
 " Setup vim-slime to work with tmux
 let g:slime_target = "tmux"
