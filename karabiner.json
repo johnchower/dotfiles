@@ -57,7 +57,9 @@
             "simple_modifications": {
                 "caps_lock": "left_control",
                 "left_command": "left_option",
-                "left_option": "left_command"
+                "left_option": "left_command",
+                "right_control": "right_option",
+                "right_option": "right_command"
             },
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
