@@ -38,6 +38,7 @@ filetype plugin indent on    " required
 " Search Settings
 " Highlight search results as you type
 set incsearch
+set nohlsearch
 " Search defaults to case-insensitive
 set ignorecase
 
@@ -137,3 +138,16 @@ let g:syntastic_check_on_wq = 0
 " Vim Markdown Preview options
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_temp_file=1
+
+" Automatic cursor switching
+" tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
+" http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
