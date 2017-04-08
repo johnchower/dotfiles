@@ -30,6 +30,7 @@ Plugin 'ivanov/vim-ipython'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'junegunn/goyo.vim'
+Plugin 'wesQ3/vim-windowswap'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -127,7 +128,7 @@ set statusline+=%*
 
 let g:syntastic_enable_r_lintr_checker = 1
 let g:syntastic_r_checkers = ['lintr']
-let g:syntastic_r_lintr_linters = "with_defaults(camel_case_linter = NULL, object_length_linter = NULL)"
+let g:syntastic_r_lintr_linters = "with_defaults(camel_case_linter = NULL, object_length_linter = NULL, closed_curly_linter = NULL, open_curly_linter = NULL)"
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
