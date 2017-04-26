@@ -90,6 +90,9 @@ let R_tmux_split = 1
 
 " R indentation rules
 let r_indent_op_pattern = '%[^%]*%$'
+let r_indent_ess_comments = 0
+let r_indent_ess_compatible = 0
+let r_indent_align_args = 0
 
 " Disable Nvim-R's autocompletion of "_" to "<-"
 let R_assign = 2
@@ -100,7 +103,7 @@ let R_show_args = 1
 let R_source_args = "print.eval = TRUE, echo = TRUE"
 
 " Automatically open html document after knitting
-let R_openhtml = 1
+let R_openhtml = 0
 
 " Setup vim-slime to work with tmux
 let g:slime_target = "tmux"
@@ -152,3 +155,10 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" Python path
+let g:python3_host_prog='/Users/johnhower/anaconda/bin/python'
+let g:python_host_prog='/Users/johnhower/anaconda/envs/system/bin/python'
+
+" Ctrl-P ignore packrat source code and libraries
+let g:ctrlp_custom_ignore='packrat/lib.*\|packrat/src.*'
