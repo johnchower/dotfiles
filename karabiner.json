@@ -63,7 +63,10 @@
                 "right_control": "right_option",
                 "right_option": "right_command"
             },
-            "virtual_hid_keyboard": {
+            "standalone_keys": {
+                "caps_lock": "escape"
+            },
+	    "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi"
             }
