@@ -1,2 +1,3 @@
 *.swp
 *Session.vim
+pg_aliases.sh

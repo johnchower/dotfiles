@@ -15,9 +15,16 @@ ZSH_THEME="candy"
 # Use vi key bindings
 bindkey -v
 
-# Alias to ssh into a tmux session on dev desktop
+# Alias
 
+# ssh into a tmux session on dev desktop
 alias sshdsk='ssh dsk -t /apollo/env/envImprovement/bin/tmux attach -t jchower'
+# Postgres database connection aliases
+if [ -f ~/dotfiles/pg_aliases.sh ]; then
+    source ~/dotfiles/pg_aliases.sh
+else
+    print "404: ~/dotfiles/pg_aliases.sh not found."
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
