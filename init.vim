@@ -14,8 +14,8 @@ Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 " Plugin 'scrooloose/nerdtree.git'
 Plugin 'vim-scripts/indentpython.vim'
-" Plugin 'jalvesaq/Nvim-R'
-" Plugin 'jpalardy/vim-slime'
+Plugin 'jalvesaq/Nvim-R'
+Plugin 'jpalardy/vim-slime'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-surround'
 " Plugin 'scrooloose/syntastic'
@@ -31,11 +31,16 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'vim-scripts/Tabmerge'
 Plugin 'roxma/nvim-completion-manager'
+Plugin 'w0rp/ale'
+Plugin 'keith/parsec.vim'
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Colors
+" colorscheme parsec 
 
 " Search Settings
 " Highlight search results as you type
@@ -102,19 +107,19 @@ let g:python3_host_prog = '/Users/jchower/miniconda3/bin/python'
 " let R_tmux_split = 1
 
 " R indentation rules
-" let r_indent_op_pattern = '%[^%]*%$'
+let r_indent_op_pattern = '%[^%]*%$'
 
 " Disable Nvim-R's autocompletion of "_" to "<-"
-" let R_assign = 2
+let R_assign = 2
 
 " Show Nvim-R's omni completion as you type
-" let R_show_args = 1
+let R_show_args = 1
 " Change Nvim-R sourcing behavior
-" let R_source_args = "print.eval = TRUE, echo = TRUE"
+let R_source_args = "print.eval = TRUE, echo = TRUE"
 
 " Setup vim-slime to work with tmux
-" let g:slime_target = "tmux"
-" let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
  
 " TMUX window move stuff
 let g:tmux_navigator_no_mappings = 1
@@ -130,3 +135,13 @@ set mouse=a
 
 " Allow tmux to access system clipboard
 set clipboard=unnamed
+
+" Allow fuzzy matching for completion manager
+" let g:cm_matcher = {'module': 'cm_matchers.abbrev_matcher'}
+let g:cm_matcher = {'module': 'cm_matchers.fuzzy_matcher', 'case': 'smartcase'}
+
+" dbext options
+" Open database window to the right of the code
+let g:dbext_default_window_use_horiz = 0
+let g:dbext_default_window_use_right = 1
+let g:dbext_default_window_width = 180

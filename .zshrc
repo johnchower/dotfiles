@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/miniconda3/bin:$PATH
+export PATH=$HOME/miniconda3/bin:$PATH:$HOME/.local/bin:$HOME/bin
 export MANPAGER="nvim -c 'set ft=man' -"
 
  #Path to your oh-my-zsh installation.
@@ -18,7 +18,11 @@ bindkey -v
 # Alias
 
 # ssh into a tmux session on dev desktop
-alias sshdsk='ssh dsk -t /apollo/env/envImprovement/bin/tmux attach -t jchower'
+alias ssh-cloud-dsk='ssh dsk -t /apollo/env/envImprovement/bin/tmux attach -t jchower || /apollo/env/envImprovement/bin/tmux new -s jchower'
+# Mount dev desktop
+alias mnt-cloud='sshfs jchower@dev-dsk-jchower-2a-5f222e44.us-west-2.amazon.com:/workplace/jchower /Users/jchower/dsk -p 22 -o reconnect'
+# Mount EMR home directory
+alias mnt-emr='sshfs hadoop@emr-hd-failure-analysis:/home/hadoop /Users/jchower/emr-hd-failure-analysis -p 22 -o reconnect'
 # Postgres database connection aliases
 if [ -f ~/dotfiles/pg_aliases.sh ]; then
     source ~/dotfiles/pg_aliases.sh
@@ -68,7 +72,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting z sudo vi-mode docker)
+plugins=(git z sudo vi-mode docker aws zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
