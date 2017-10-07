@@ -3,6 +3,9 @@
 export PATH=$HOME/miniconda3/bin:$PATH:$HOME/.local/bin:$HOME/bin
 export MANPAGER="nvim -c 'set ft=man' -"
 
+# Editor and shell variables
+export EDITOR=/usr/local/bin/nvim
+
  #Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -18,7 +21,7 @@ bindkey -v
 # Alias
 
 # ssh into a tmux session on dev desktop
-alias ssh-cloud-dsk='ssh dsk -t /apollo/env/envImprovement/bin/tmux attach -t jchower || /apollo/env/envImprovement/bin/tmux new -s jchower'
+alias ssh-cloud-dsk='ssh dsk -t "/apollo/env/envImprovement/bin/tmux attach -t jchower || /apollo/env/envImprovement/bin/tmux new -s jchower"'
 # Mount dev desktop
 alias mnt-cloud='sshfs jchower@dev-dsk-jchower-2a-5f222e44.us-west-2.amazon.com:/workplace/jchower /Users/jchower/dsk -p 22 -o reconnect'
 # Mount EMR home directory
@@ -72,7 +75,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z sudo vi-mode docker aws zsh-syntax-highlighting)
+plugins=(git z sudo vi-mode docker aws rbenv tmuxinator zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,3 +107,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+ 
+# Set up rbenv
+eval "$(rbenv init -)" 
